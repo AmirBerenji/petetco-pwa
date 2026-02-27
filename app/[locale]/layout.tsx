@@ -1,18 +1,7 @@
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import type { Metadata, Viewport } from "next";
-  
-export const metadata: Metadata = {
-  title: "Petetco",
-  description: "Petetco PWA",
-  manifest: "/manifest.json",
-};
-
-export const viewport: Viewport = {
-  themeColor: "#000000",
-};
-
+import FooterSide from "../component/nav/FooterSide";
 
 export default async function LocaleLayout({
   children,
@@ -26,7 +15,6 @@ export default async function LocaleLayout({
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
-
 
   return (
     <html lang={locale}>
@@ -97,7 +85,7 @@ export default async function LocaleLayout({
           sizes="16x16"
           href="/favicon-16x16.png"
         />
-    
+       
 
         {/* Language-specific */}
         <meta httpEquiv="Content-Language" content={locale} />
@@ -120,6 +108,7 @@ export default async function LocaleLayout({
         <div className="min-h-[850px]">
           <NextIntlClientProvider>{children}</NextIntlClientProvider>
         </div>
+        <FooterSide />
       </body>
     </html>
   );
