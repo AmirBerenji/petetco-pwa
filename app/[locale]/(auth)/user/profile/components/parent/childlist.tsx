@@ -1,0 +1,30 @@
+import { getChildrenByUser } from "@/action/parentApiAction";
+import Childcard from "@/app/[locale]/(main)/services/parent/component/childcard";
+import { Child } from "@/model/child";
+import React, { useEffect, useState } from "react";
+
+interface ChildListProps {
+  onEditChild: (childId: number) => void;
+}
+
+
+export default function ChildList(prop: ChildListProps ) {
+  const [childs, setChilds] = useState<Child[]>([]);
+  useEffect(() => {
+    async function fetchChildren() {
+      const data = await getChildrenByUser();
+      setChilds(data);
+    }
+    fetchChildren();
+  }, []);
+
+  return (
+    <>
+      <div className=" grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 ">
+        {childs.map((child) => (
+          <Childcard key={child.id} id={child.id} child={child} onEdit={prop.onEditChild} />
+        ))}
+      </div>
+    </>
+  );
+}
