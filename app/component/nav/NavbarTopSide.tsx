@@ -41,13 +41,13 @@ export default function NavbarTopSide() {
   }, []);
 
   return (
-    <header className="relative bg-[#e6f0f6] pt-6 pb-10 px-4 sm:px-10">
+    <header className="relative bg-[#e6f6e8] pt-6 pb-10 px-4 sm:px-10">
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between">
         <div className="flex items-center ">
           <img src="/assets/images/logo.png" className="w-9 mr-2 -mt-2" />
-          <span className="font-bold text-2xl text-[#ff9a5a]">Kidoo</span>
+          <span className="font-bold text-2xl text-[#b62e2e]">Pete</span>
           <span className="font-bold text-2xl text-[#2f3e4e] tracking-wide">
-            Hub
+            Co
           </span>
         </div>
 

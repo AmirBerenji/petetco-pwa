@@ -10,8 +10,8 @@ export default function BannerMainPage() {
           <h1 className="text-4xl sm:text-5xl font-semibold text-[#2f3e4e] leading-tight mb-4">
             {t("joinus")}
 
-            <span className="text-[#ff9a5a]">Kidoo</span>
-            <span className="text-[#2f3e4e] tracking-wide">Hub</span>
+            <span className="text-[#b62e2e]">Pete</span>
+            <span className="text-[#2f3e4e] tracking-wide">Co</span>
             {t("family")}
           </h1>
           <p className="text-xs text-gray-500 mb-6">{t("bannerdesc") }</p>
